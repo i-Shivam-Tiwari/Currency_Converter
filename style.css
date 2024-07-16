@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    background-color: cyan;
+    background-color: rgba(37, 63, 5, 0.836);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@ body{
 }
 
 .container{
-    background-color: white;
+    background-color: rgb(157, 140, 140);
     padding: 10px 20px;
     border: 1px solid gray;
     border-radius: 10px;
