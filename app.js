@@ -20,7 +20,7 @@ function updateToCurr(){
         toCurrOption.innerText = key;
         toCurrOption.value = currencyMap[key];
         if(key === 'INR'){
-            toCurrOption.selected = "selected" 
+            toCurrOption.selected = "selected"
         }
         toCurrencySelect.append(toCurrOption);
     }
