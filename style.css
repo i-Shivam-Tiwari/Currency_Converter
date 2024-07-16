@@ -21,3 +21,24 @@ body{
     display:flex;
     justify-content: space-between;
 }
+
+.fromCurr, .toCurr{
+    display:flex;
+    align-items: center;
+    column-gap: 2px;
+}
+
+
+#fromCurrencyList, #toCurrencyList{
+    border: 1px solid black;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.amountSection{
+    margin-top: 20px;
+}
+
+.msg, .button{
+    margin-top: 30px;
+}

@@ -10,8 +10,26 @@
     <div class="container">
         <h3>Currency Converter</h3>
         <div class="currList">
-            <div>From: <span id="fromCountryFlag"></span><select id="fromCurrencyList"></select></div>
-            <div>To: <span id="toCountryFlag"></span><select id="toCurrencyList"></select></div>
+            <div>
+                <div class="fromCurr">
+                    From:
+                    <img id="fromCountryFlag" src="" ></img>
+                    <select id="fromCurrencyList" name="fromCurrencyList"></select>
+                </div> 
+            </div>
+            <div> 
+                <div class="toCurr">
+                    To:
+                    <img id="toCountryFlag" src=""></img>
+                    <select id="toCurrencyList" name="toCurrencyList"></select></div>
+                </div>
+        </div>
+        <div class="amountSection">
+            <label for="amount">Enter amount: </label><input type="number" name="amount" id="amount">
+            <button type="button" class="button">Get converted amount</button>
+        </div>
+        <div class="msg">
+
         </div>
     </div>
 
