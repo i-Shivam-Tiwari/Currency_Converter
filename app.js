@@ -1,8 +1,8 @@
-var BASE_URL = 'https://flagsapi.com'
+var BASE_URL = 'https://flagsapi.com';
+var BASE_URL_RATE = 'http://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies';
 
 function updateFromCurr(){
     let fromCurrencySelect = document.getElementById('fromCurrencyList');
-    console.log("From currency list" + fromCurrencySelect)
     for(const key in currencyMap){
         let fromCurrOption = document.createElement('option');
         fromCurrOption.innerText = key;
@@ -16,7 +16,6 @@ function updateFromCurr(){
 
 function updateToCurr(){
     let toCurrencySelect = document.getElementById('toCurrencyList');
-    console.log("To currency list" + toCurrencySelect)
     for(const key in currencyMap){
         let toCurrOption = document.createElement('option');
         toCurrOption.innerText = key;
@@ -45,13 +44,11 @@ document.getElementById('toCurrencyList').addEventListener('change', () => {
 
 function updateFromCountryFlag(countryCode){
     let fromCountryFlag = document.getElementById('fromCountryFlag');
-    console.log(fromCountryFlag);
     fromCountryFlag.src=`${BASE_URL}/${countryCode}/flat/32.png`;
 }
 
 function updateToCountryFlag(countryCode){
     let toCountryFlag = document.getElementById('toCountryFlag');
-    console.log(toCountryFlag);
     toCountryFlag.src=`${BASE_URL}/${countryCode}/flat/32.png`;
 }
 
@@ -60,5 +57,12 @@ document.querySelector('.button').addEventListener('click', () => {
 })
 
 function getConversion(amount, fromCurrency, toCurrency){
-    
+    if(amount > 1){
+        let rate = fetch(`${BASE_URL_RATE}/${fromCurrency.toLowerCase()}/${toCurrency.toLowerCase()}.json`)
+        .then((response) => {
+            console.log("API Response " + response)
+            return response.json
+        });
+        document.querySelector('.msg').innerHTML = `<h5>Converted Amount = ${rate*amount}</h5>`
+    }
 }
